@@ -1,4 +1,4 @@
-package com.example.designlibrary
+package com.example.designlibrary.components.buttons
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,15 +18,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.designlibrary.resources.Res
-import com.example.designlibrary.resources.ic_arrow_back
+import com.example.designlibrary.resources.ic_add
+import com.example.designlibrary.theme.AppColors.PrimaryBlue
+import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun AppBigFilledButton(
-    onAddTopicClick: () -> Unit
+fun AppFullWidthFilledButton(
+    iconRes: DrawableResource,
+    onClick: () -> Unit
 ) {
     Button(
-        onClick = onAddTopicClick,
+        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .height(60.dp),
@@ -40,17 +43,11 @@ fun AppBigFilledButton(
         )
     ) {
         Icon(
-            painter = painterResource(Res.drawable.ic_arrow_back),
+            painter = painterResource(iconRes),
             contentDescription = null,
             modifier = Modifier.size(28.dp)
         )
-//        Icon(
-//            imageVector = Icons.Default.Add,
-//            contentDescription = null,
-//            modifier = Modifier.size(28.dp)
-//        )
         Spacer(modifier = Modifier.width(12.dp))
-
         Text(
             text = "Добавить тему",
             fontSize = 18.sp,
@@ -63,7 +60,8 @@ fun AppBigFilledButton(
 @Preview
 @Composable
 private fun TempAppBigFilledButtonPreview() {
-    AppBigFilledButton(
-        onAddTopicClick = {}
+    AppFullWidthFilledButton(
+        iconRes = Res.drawable.ic_add,
+        onClick = {}
     )
 }

@@ -1,4 +1,4 @@
-package com.example.designlibrary
+package com.example.designlibrary.components.listBlocks
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
+/** Составной блок экрана (item)
+ * @param content Содержимое блока */
 fun LazyListScope.AppScreenField(
     content: @Composable ColumnScope.() -> Unit,
 ) {

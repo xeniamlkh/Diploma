@@ -1,4 +1,4 @@
-package com.example.designlibrary
+package com.example.designlibrary.screens
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.layout.Arrangement.Top
@@ -17,13 +17,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.designlibrary.resources.Res
-import com.example.designlibrary.resources.my_topics
-import com.example.designlibrary.resources.topics_start_warning
+import com.example.designlibrary.components.bars.AppTopBar
 import org.jetbrains.compose.resources.StringResource
 
+/** Единый экран для всего приложения (LazyColumn)
+ * @param titleRes Название экрана
+ * @param subTitleRes Подзаголовок экрана, описание
+ * @param showBackButton Показывать ли кнопку назад (Для jvm)
+ * @param onBackClick Функция, которую нужно выполнять при нажатии на кнопку назад
+ * @param scrollState //TODO
+ * @param content Содержимое экрана
+ * */
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
 fun AppScreen(
@@ -41,7 +46,7 @@ fun AppScreen(
     content: LazyListScope.() -> Unit
 ) {
     Scaffold(
-        containerColor = Color.White, //TODO change to material theme
+        containerColor = Color.White,
         modifier = Modifier.imePadding(),
         topBar = {
             AppTopBar(
@@ -67,17 +72,5 @@ fun AppScreen(
             }
         },
         bottomBar = {}
-    )
-}
-
-@Preview
-@Composable
-private fun TempAppScreenPreview() {
-    AppScreen(
-        titleRes = Res.string.my_topics,
-        subTitleRes = Res.string.topics_start_warning,
-        showBackButton = false,
-        onBackClick = {},
-        content = {}
     )
 }
