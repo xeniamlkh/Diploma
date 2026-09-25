@@ -1,4 +1,4 @@
-package com.example.designlibrary.components.listBlocks
+package com.example.designlibrary.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope

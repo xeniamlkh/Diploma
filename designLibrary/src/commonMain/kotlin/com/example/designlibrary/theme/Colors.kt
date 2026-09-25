@@ -7,4 +7,5 @@ object AppColors {
     val PrimaryBlueLight = Color(0xFFE8EEFF)
     val TextPrimary = Color(0xFF172033)
     val TextSecondary = Color(0xFF8190AA)
+    val PrimaryCornFlowerBlue = Color(0xFF90A6FF)
 }

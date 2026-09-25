@@ -1,7 +1,7 @@
 package com.example.designlibrary.screens
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.foundation.layout.Arrangement.Top
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -15,13 +15,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.example.designlibrary.components.bars.AppTopBar
+import com.example.designlibrary.components.AppTopBar
 import org.jetbrains.compose.resources.StringResource
 
-/** Единый экран для всего приложения (LazyColumn)
+/** Единый шаблон экрана для всего приложения (LazyColumn)
  * @param titleRes Название экрана
  * @param subTitleRes Подзаголовок экрана, описание
  * @param showBackButton Показывать ли кнопку назад (Для jvm)
@@ -59,12 +57,12 @@ fun AppScreen(
         content = { padding ->
             LazyColumn(
                 modifier = Modifier
-                    .semantics { contentDescription = "LazyColumn" }
+                    //.semantics { contentDescription = "LazyColumn" }
                     .fillMaxWidth()
                     .padding(padding)
                     .padding(horizontal = 8.dp),
                 state = scrollState,
-                verticalArrangement = Top
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 item { Spacer(Modifier.height(8.dp)) }
                 content()

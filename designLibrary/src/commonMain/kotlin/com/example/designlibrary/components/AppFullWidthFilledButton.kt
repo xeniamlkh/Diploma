@@ -1,4 +1,4 @@
-package com.example.designlibrary.components.buttons
+package com.example.designlibrary.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,18 +14,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.designlibrary.resources.Res
-import com.example.designlibrary.resources.ic_add
 import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
+/** Кнопка в ширину экрана */
 @Composable
 fun AppFullWidthFilledButton(
     iconRes: DrawableResource,
+    buttonText: String,
     onClick: () -> Unit
 ) {
     Button(
@@ -49,19 +48,9 @@ fun AppFullWidthFilledButton(
         )
         Spacer(modifier = Modifier.width(12.dp))
         Text(
-            text = "Добавить тему",
+            text = buttonText,
             fontSize = 18.sp,
             fontWeight = FontWeight.Medium
         )
     }
-
-}
-
-@Preview
-@Composable
-private fun TempAppBigFilledButtonPreview() {
-    AppFullWidthFilledButton(
-        iconRes = Res.drawable.ic_add,
-        onClick = {}
-    )
 }

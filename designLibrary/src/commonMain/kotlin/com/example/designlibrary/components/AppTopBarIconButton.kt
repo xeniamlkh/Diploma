@@ -1,4 +1,4 @@
-package com.example.designlibrary.components.buttons
+package com.example.designlibrary.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size

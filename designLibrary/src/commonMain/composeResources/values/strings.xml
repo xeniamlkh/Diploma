@@ -1,4 +1,7 @@
 <resources>
    <string name="topics_start_warning">Здесь будут храниться ваши слова \nпо темам</string>
    <string name="my_topics">Мои темы</string>
+   <string name="no_topics">У вас пока нет тем</string>
+   <string name="add_new_topic_explanation">Добавьте первую тему, чтобы начать\nизучать новые слова</string>
+   <string name="add_new_topic">Добавить тему</string>
 </resources>
