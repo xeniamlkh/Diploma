@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppScreenField
 import com.example.designlibrary.resources.ic_add
+import com.example.designlibrary.resources.*
 import com.example.designlibrary.resources.ic_save
 import com.example.designlibrary.resources.new_topic
 import com.example.designlibrary.resources.save_btn
@@ -26,7 +27,7 @@ import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import com.example.designlibrary.theme.AppColors.TextPrimary
 import com.example.designlibrary.theme.AppColors.TextSecondary
 import com.example.diploma.data.WordItem
-import diploma.shared.generated.resources.Res
+import com.example.designlibrary.resources.Res
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -43,7 +44,7 @@ fun AddTopicScreen(
     val words = remember { mutableStateListOf<WordItem>() }
 
     AppScreen(
-        titleRes = com.example.designlibrary.resources.Res.string.new_topic,
+        titleRes = Res.string.new_topic,
         showBackButton = true,
         onBackClick = onBackClick,
         content = {
@@ -63,7 +64,7 @@ fun AddTopicScreen(
                         topicName = it
                     },
                     modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text(stringResource(com.example.designlibrary.resources.Res.string.topic_example)) },
+                    placeholder = { Text(stringResource(Res.string.topic_example)) },
                     singleLine = true,
                     shape = RoundedCornerShape(14.dp),
                     colors = OutlinedTextFieldDefaults.colors(
@@ -76,8 +77,8 @@ fun AddTopicScreen(
             }
             AppScreenField {
                 AppFullWidthFilledButton(
-                    iconRes = com.example.designlibrary.resources.Res.drawable.ic_save,
-                    buttonText = stringResource(com.example.designlibrary.resources.Res.string.save_btn),
+                    iconRes = Res.drawable.ic_save,
+                    buttonText = stringResource(Res.string.save_btn),
                     onClick = {} //TODO VM here
                 )
             }
