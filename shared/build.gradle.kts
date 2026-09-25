@@ -73,6 +73,9 @@ kotlin {
             //Koin Navigation
             implementation(libs.koin.navigation)
 
+            //Koin ViewModel
+            implementation(libs.koin.viewmodel)
+
             //Serialization
             implementation(libs.kotlinx.serialization)
 

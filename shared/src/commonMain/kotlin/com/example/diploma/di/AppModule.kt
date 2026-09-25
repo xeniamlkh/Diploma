@@ -1,13 +1,21 @@
 package com.example.diploma.di
 
+import com.example.diploma.data.AppRepository
+import com.example.diploma.data.AppRepositoryImpl
 import com.example.diploma.navigation.AddTopicScreen
 import com.example.diploma.navigation.MainScreen
 import com.example.diploma.navigation.Navigator
 import com.example.diploma.ui.AddTopicScreen
+import com.example.diploma.ui.AddTopicViewModel
 import com.example.diploma.ui.MainScreen
 import org.koin.core.annotation.KoinExperimentalAPI
+import org.koin.core.module.dsl.bind
+import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModel
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 import org.koin.dsl.navigation3.navigation
+import org.koin.plugin.module.dsl.viewModel
 
 
 /**
@@ -17,6 +25,9 @@ import org.koin.dsl.navigation3.navigation
 val appModule = module {
 
     single { Navigator(startDestination = MainScreen) }
+    singleOf(::AppRepositoryImpl) { bind<AppRepository>() }
+
+    viewModel { AddTopicViewModel(appRepository = get()) }
 
     navigation<MainScreen> {
         MainScreen(

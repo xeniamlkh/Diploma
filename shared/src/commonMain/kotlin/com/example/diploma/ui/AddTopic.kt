@@ -30,10 +30,12 @@ import com.example.diploma.data.WordItem
 import com.example.designlibrary.resources.Res
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
 
 
 @Composable
 fun AddTopicScreen(
+    viewModel: AddTopicViewModel = koinViewModel(),
     onBackClick: () -> Unit = {},
     //onSaveClick: (String, List<WordItem>) -> Unit = { _, _ -> }
 ) {
@@ -79,7 +81,7 @@ fun AddTopicScreen(
                 AppFullWidthFilledButton(
                     iconRes = Res.drawable.ic_save,
                     buttonText = stringResource(Res.string.save_btn),
-                    onClick = {} //TODO VM here
+                    onClick = { viewModel.addTopic(topicName) }
                 )
             }
         }
