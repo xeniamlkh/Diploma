@@ -3,6 +3,7 @@ package com.example.designlibrary.components
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
@@ -10,8 +11,10 @@ import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
@@ -27,10 +30,17 @@ fun AppTopBarIconButton(
         modifier = Modifier
             .padding(end = 5.dp)
             .clip(RoundedCornerShape(16.dp)),
-        colors = IconButtonDefaults.iconButtonColors().copy(
-            containerColor = colorScheme.primary,
-            contentColor = colorScheme.surfaceContainer
+        colors = IconButtonDefaults.iconButtonColors(
+            containerColor = PrimaryBlue,
+            contentColor = Color.White
         ),
+
+
+//        colors = IconButtonDefaults.iconButtonColors().copy(
+//            containerColor = colorScheme.primary,
+//            //containerColor = ,
+//            contentColor = colorScheme.surfaceContainer
+//        ),
         enabled = enabled,
         onClick = onClick
     ) {

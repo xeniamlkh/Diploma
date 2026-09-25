@@ -9,32 +9,82 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.designlibrary.components.AppFullWidthFilledButton
+import com.example.designlibrary.components.AppScreenField
+import com.example.designlibrary.resources.ic_add
+import com.example.designlibrary.resources.ic_save
+import com.example.designlibrary.resources.new_topic
+import com.example.designlibrary.resources.save_btn
+import com.example.designlibrary.resources.topic_example
+import com.example.designlibrary.screens.AppScreen
+import com.example.designlibrary.theme.AppColors.PrimaryBlue
+import com.example.designlibrary.theme.AppColors.TextPrimary
+import com.example.designlibrary.theme.AppColors.TextSecondary
+import com.example.diploma.data.WordItem
+import diploma.shared.generated.resources.Res
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
-//private val PrimaryBlue = Color(0xFF4164F7)
-//private val TextPrimary = Color(0xFF172033)
-//private val TextSecondary = Color(0xFF8190AA)
-
-data class WordItem(
-    val word: String,
-    val translation: String,
-    val example: String
-)
 
 @Composable
 fun AddTopicScreen(
     onBackClick: () -> Unit = {},
     //onSaveClick: (String, List<WordItem>) -> Unit = { _, _ -> }
 ) {
-//    var topicName by remember { mutableStateOf("") }
-//    var word by remember { mutableStateOf("") }
-//    var translation by remember { mutableStateOf("") }
-//    var example by remember { mutableStateOf("") }
-//    val words = remember { mutableStateListOf<WordItem>() }
-//
+    var topicName by remember { mutableStateOf("") }
+    var word by remember { mutableStateOf("") }
+    var translation by remember { mutableStateOf("") }
+    var example by remember { mutableStateOf("") }
+    val words = remember { mutableStateListOf<WordItem>() }
+
+    AppScreen(
+        titleRes = com.example.designlibrary.resources.Res.string.new_topic,
+        showBackButton = true,
+        onBackClick = onBackClick,
+        content = {
+            AppScreenField {
+                Text(
+                    text = "Название темы",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = TextPrimary
+                )
+            }
+            AppScreenField {
+                OutlinedTextField(
+                    value =
+                        topicName,
+                    onValueChange = {
+                        topicName = it
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(com.example.designlibrary.resources.Res.string.topic_example)) },
+                    singleLine = true,
+                    shape = RoundedCornerShape(14.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = PrimaryBlue,
+                        unfocusedBorderColor = TextSecondary,
+                        focusedTextColor = TextPrimary,
+                        unfocusedTextColor = TextSecondary
+                    )
+                )
+            }
+            AppScreenField {
+                AppFullWidthFilledButton(
+                    iconRes = com.example.designlibrary.resources.Res.drawable.ic_save,
+                    buttonText = stringResource(com.example.designlibrary.resources.Res.string.save_btn),
+                    onClick = {} //TODO VM here
+                )
+            }
+        }
+    )
+}
+
 //    Scaffold(topBar = {
 //        TopAppBar(
 //            title = { Text(text = "Новая тема", fontWeight = FontWeight.SemiBold) },
@@ -187,7 +237,6 @@ fun AddTopicScreen(
 //            item { Spacer(modifier = Modifier.height(70.dp)) }
 //        }
 //    }
-}
 
 //@Composable
 //private fun WordCard(item: WordItem, onDeleteClick: () -> Unit) {

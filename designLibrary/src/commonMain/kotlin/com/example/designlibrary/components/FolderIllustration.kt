@@ -38,21 +38,21 @@ fun FolderIllustration() {
                 modifier = Modifier.size(92.dp)
             )
 
-            Surface(
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .offset(x = 26.dp, y = 15.dp)
-                    .size(38.dp),
-                shape = CircleShape,
-                color = PrimaryBlue
-            ) {
-                Icon(
-                    painter = painterResource(Res.drawable.ic_add),
-                    contentDescription = null,
-                    tint = Color.White,
-                    modifier = Modifier.padding(7.dp)
-                )
-            }
+//            Surface(
+//                modifier = Modifier
+//                    .align(Alignment.Center)
+//                    .offset(x = 26.dp, y = 15.dp)
+//                    .size(38.dp),
+//                shape = CircleShape,
+//                color = PrimaryBlue
+//            ) {
+//                Icon(
+//                    painter = painterResource(Res.drawable.ic_add),
+//                    contentDescription = null,
+//                    tint = Color.White,
+//                    modifier = Modifier.padding(7.dp)
+//                )
+//            }
         }
     }
 }

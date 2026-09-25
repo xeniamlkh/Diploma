@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.designlibrary.resources.Res
+import com.example.designlibrary.resources.back_btn_description
 import com.example.designlibrary.resources.ic_arrow_back
 import com.example.designlibrary.resources.my_topics
 import com.example.designlibrary.resources.topics_start_warning
@@ -41,7 +42,7 @@ fun AppTopBar(
         if (showBackButton) {
             AppTopBarIconButton(
                 onClick = onBackClick ?: {},
-                contentDescription = "Назад",
+                contentDescription = stringResource(Res.string.back_btn_description),
                 iconId = Res.drawable.ic_arrow_back
             )
         }
@@ -55,13 +56,10 @@ fun AppTopBar(
                 color = TextPrimary
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
-
             if (subTitleRes != null) {
                 Text(
                     text = stringResource(subTitleRes),
                     fontSize = 18.sp,
-                    lineHeight = 24.sp,
                     color = TextSecondary
                 )
             }

@@ -4,4 +4,8 @@
    <string name="no_topics">У вас пока нет тем</string>
    <string name="add_new_topic_explanation">Добавьте первую тему, чтобы начать\nизучать новые слова</string>
    <string name="add_new_topic">Добавить тему</string>
+   <string name="new_topic">Новая тема</string>
+   <string name="back_btn_description">Назад</string>
+   <string name="save_btn">Сохранить</string>
+   <string name="topic_example">Например, Еда</string>
 </resources>
