@@ -1,4 +1,4 @@
-package com.example.diploma.data
+package com.example.databasemodule
 
 data class WordItem(
     val word: String,

@@ -1,4 +1,4 @@
-package com.example.diploma.data
+package com.example.databasemodule
 
 interface AppRepository {
     fun insertWord(word: String)

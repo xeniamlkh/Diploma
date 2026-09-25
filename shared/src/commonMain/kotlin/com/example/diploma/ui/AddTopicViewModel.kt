@@ -2,7 +2,7 @@ package com.example.diploma.ui
 
 import androidx.lifecycle.ViewModel
 import co.touchlab.kermit.Logger
-import com.example.diploma.data.AppRepository
+import com.example.databasemodule.AppRepository
 
 class AddTopicViewModel(
     private val appRepository: AppRepository

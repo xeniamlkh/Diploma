@@ -1,4 +1,4 @@
-package com.example.diploma.data
+package com.example.databasemodule
 
 class AppRepositoryImpl: AppRepository {
     override fun insertWord(word: String) {

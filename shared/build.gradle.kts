@@ -83,6 +83,7 @@ kotlin {
             implementation(libs.kermit)
 
             implementation(projects.designLibrary)
+            implementation(projects.databaseModule)
         }
 
         jvmMain.dependencies {

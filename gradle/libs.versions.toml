@@ -11,10 +11,9 @@ androidx-lifecycle = "2.11.0-beta01"
 androidx-testExt = "1.3.0"
 composeMultiplatform = "1.12.1"
 junit = "4.13.2"
-kotlin = "2.4.10"
+kotlin = "2.4.20"
 kotlinx-coroutines = "1.11.0"
 material3 = "1.12.0-alpha03"
-material-icons = "1.7.8"
 navigationCompose = "2.9.2"
 material = "1.14.0"
 kotlinStdlib = "2.4.10"
@@ -23,9 +22,10 @@ core = "1.5.0"
 koin = "4.2.2"
 serialization_version = "1.11.0"
 kermit = "2.0.4"
-
-#?????
 multiplatform-nav3-ui = "1.1.1"
+room3 = "3.1.0-alpha01"
+sqlite = "2.7.1"
+ksp = "2.3.12"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -55,13 +55,10 @@ compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-previ
 #Compose Resources
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 
-#Design
-#material-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons" }
-
 #Navigation 3
 jetbrains-navigation3-ui = { module = "org.jetbrains.androidx.navigation3:navigation3-ui", version.ref = "multiplatform-nav3-ui" }
 
-#Koin + Koin Navigation
+#Koin (Di, Navigation, ViewModel)
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-navigation = { module = "io.insert-koin:koin-compose-navigation3", version.ref = "koin" }
@@ -69,6 +66,12 @@ koin-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref
 
 #Serialization
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization_version" }
+
+#Room
+androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+androidx-room3-runtime = { module = "androidx.room3:room3-runtime", version.ref = "room3" }
+androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3" }
+androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
 
 #Logs
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
@@ -83,3 +86,5 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 androidLint = { id = "com.android.lint", version.ref = "agp" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+androidx-room3 = { id = "androidx.room3", version.ref = "room3" }

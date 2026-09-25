@@ -1,22 +1,15 @@
 package com.example.diploma.ui
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppScreenField
-import com.example.designlibrary.resources.ic_add
 import com.example.designlibrary.resources.*
 import com.example.designlibrary.resources.ic_save
 import com.example.designlibrary.resources.new_topic
@@ -28,7 +21,6 @@ import com.example.designlibrary.theme.AppColors.TextPrimary
 import com.example.designlibrary.theme.AppColors.TextSecondary
 import com.example.diploma.data.WordItem
 import com.example.designlibrary.resources.Res
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
