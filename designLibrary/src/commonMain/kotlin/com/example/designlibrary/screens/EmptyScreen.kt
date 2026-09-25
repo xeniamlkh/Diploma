@@ -3,6 +3,7 @@ package com.example.designlibrary.screens
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppScreenField
@@ -58,5 +59,13 @@ fun EmptyScreen(
                 )
             }
         }
+    )
+}
+
+@Preview
+@Composable
+fun EmptyScreenPreview() {
+    EmptyScreen(
+        onAddTopicClick = {}
     )
 }

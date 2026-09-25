@@ -69,6 +69,8 @@ fun AppScreen(
                 item { Spacer(Modifier.height(8.dp)) }
             }
         },
-        bottomBar = {}
+        bottomBar = {
+
+        }
     )
 }
