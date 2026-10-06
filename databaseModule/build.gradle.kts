@@ -1,23 +1,58 @@
 plugins {
-    id("java-library")
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidMultiplatformLibrary)
+    alias(libs.plugins.androidLint)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room3)
+    alias(libs.plugins.koin.compiler)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+room3 {
+    schemaDirectory("$projectDir/schemas")
 }
+
 kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+    jvm()
+
+    android {
+        namespace = "com.example.databasemodule"
+        compileSdk {
+            version = release(36) {
+                minorApiLevel = 1
+            }
+        }
+        minSdk = 27
+
+        withHostTestBuilder {
+        }
+
+        withDeviceTestBuilder {
+            sourceSetTreeName = "test"
+        }.configure {
+            instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
+    }
+
+    sourceSets {
+        androidMain.dependencies {
+            implementation(libs.androidx.room3.sqlite.wrapper)
+        }
+        commonMain.dependencies {
+            implementation(libs.kotlin.stdlib)
+
+            //Room
+            implementation(libs.androidx.room3.runtime)
+            implementation(libs.androidx.sqlite.bundled)
+
+            //DI Koin Core
+            implementation(libs.koin.core)
+        }
+
+        jvmMain.dependencies {}
     }
 }
 
 dependencies {
-    implementation(libs.androidx.room3.runtime)
-    implementation(libs.androidx.sqlite.bundled)
-
-    //add("kspAndroid", libs.androidx.room3.compiler)
+    add("kspAndroid", libs.androidx.room3.compiler)
+    add("kspJvm", libs.androidx.room3.compiler)
 }

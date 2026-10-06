@@ -18,10 +18,6 @@ plugins {
 kotlin {
     jvm()
 
-    androidLibrary {
-        androidResources.enable = true
-    }
-
     android {
         namespace = "com.example.diploma.shared"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -59,7 +55,7 @@ kotlin {
             implementation(libs.compose.ui)
 
             //Resources (static content, such as images, fonts, and strings)
-            implementation(libs.compose.components.resources)
+            api(libs.compose.components.resources)
 
             //Preview
             implementation(libs.compose.uiToolingPreview)
@@ -86,9 +82,7 @@ kotlin {
             implementation(projects.databaseModule)
         }
 
-        jvmMain.dependencies {
-
-        }
+        jvmMain.dependencies {}
 //        commonTest.dependencies {
 //            implementation(libs.kotlin.test)
 //        }

@@ -1,4 +1,4 @@
-package com.example.databasemodule
+package com.example.databasemodule.domain
 
 data class WordItem(
     val word: String,
