@@ -34,13 +34,7 @@ fun AppScreen(
     subTitleRes: StringResource? = null,
     showBackButton: Boolean = false,
     onBackClick: (() -> Unit)? = null,
-    //sharedTransitionScope: SharedTransitionScope,
-    //animatedContentScope: AnimatedContentScope,
     scrollState: LazyListState = rememberLazyListState(),
-    // drawerState: DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed),
-    // bottomBar: @Composable ColumnScope.() -> Unit = {},
-    //drawerContent: @Composable () -> Unit = {},
-    //snackBarHostState: SnackbarHostState = SnackbarHostState(),
     content: LazyListScope.() -> Unit
 ) {
     Scaffold(
@@ -57,7 +51,6 @@ fun AppScreen(
         content = { padding ->
             LazyColumn(
                 modifier = Modifier
-                    //.semantics { contentDescription = "LazyColumn" }
                     .fillMaxWidth()
                     .padding(padding)
                     .padding(horizontal = 8.dp),
@@ -69,8 +62,6 @@ fun AppScreen(
                 item { Spacer(Modifier.height(8.dp)) }
             }
         },
-        bottomBar = {
-
-        }
+        bottomBar = {}
     )
 }

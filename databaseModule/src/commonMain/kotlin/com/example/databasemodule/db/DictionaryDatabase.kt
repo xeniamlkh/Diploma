@@ -7,10 +7,10 @@ import androidx.room3.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import kotlinx.coroutines.Dispatchers
 
-@Database(entities = [DictionaryEntity::class], version = 1)
+@Database(entities = [WordEntity::class], version = 2)
 @ConstructedBy(DictionaryDatabaseConstructor::class)
 abstract class DictionaryDatabase : RoomDatabase() {
-    abstract fun getDao(): DictionaryDao
+    internal abstract fun getDao(): DictionaryDao
 }
 
 @Suppress("KotlinNoActualForExpect")
@@ -18,13 +18,14 @@ expect object DictionaryDatabaseConstructor : RoomDatabaseConstructor<Dictionary
     override fun initialize(): DictionaryDatabase
 }
 
-fun getRoomDatabase(
+internal fun getRoomDatabase(
     builder: RoomDatabase.Builder<DictionaryDatabase>
 ): DictionaryDatabase {
     return builder
+        .fallbackToDestructiveMigration()
         .setDriver(BundledSQLiteDriver())
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
 }
 
-fun createDao(database: DictionaryDatabase): DictionaryDao = database.getDao()
+internal fun createDao(database: DictionaryDatabase): DictionaryDao = database.getDao()

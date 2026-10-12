@@ -12,7 +12,7 @@ kotlin {
 }
 dependencies {
     implementation(project(":shared"))
-    implementation(project(":designLibrary"))
+    //implementation(project(":designLibrary"))
     //implementation(project(":databaseModule"))
 
     implementation(libs.androidx.activity.compose)

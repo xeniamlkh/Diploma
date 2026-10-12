@@ -10,15 +10,14 @@ import androidx.compose.ui.Modifier
 
 /** Составной блок экрана (item)
  * @param content Содержимое блока */
-fun LazyListScope.AppScreenField(
+fun LazyListScope.appScreenField(
     content: @Composable ColumnScope.() -> Unit,
 ) {
     item {
         Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            content()
-        }
+            horizontalAlignment = Alignment.CenterHorizontally,
+            content = content
+        )
     }
 }

@@ -1,11 +1,13 @@
 <resources>
-   <string name="topics_start_warning">Здесь будут храниться ваши слова \nпо темам</string>
-   <string name="my_topics">Мои темы</string>
-   <string name="no_topics">У вас пока нет тем</string>
-   <string name="add_new_topic_explanation">Добавьте первую тему, чтобы начать\nизучать новые слова</string>
-   <string name="add_new_topic">Добавить тему</string>
-   <string name="new_topic">Новая тема</string>
+   <string name="words_start_warning">Здесь будут храниться ваши слова</string>
+   <string name="my_dictionary">Мой словарик</string>
+   <string name="no_topics">Ваш словарик пока пуст</string>
+   <string name="add_new_words_explanation">Добавьте первые слова, чтобы начать изучение</string>
+   <string name="add_new_word">Добавить</string>
+   <string name="new_word">Добавление нового слова</string>
    <string name="back_btn_description">Назад</string>
    <string name="save_btn">Сохранить</string>
-   <string name="topic_example">Например, Еда</string>
+   <string name="word">Введите слово</string>
+   <string name="translation">Введите перевод</string>
+   <string name="example">Добавьте пример</string>
 </resources>

@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.sp
 import com.example.designlibrary.resources.Res
 import com.example.designlibrary.resources.back_btn_description
 import com.example.designlibrary.resources.ic_arrow_back
-import com.example.designlibrary.resources.my_topics
-import com.example.designlibrary.resources.topics_start_warning
+import com.example.designlibrary.resources.my_dictionary
+import com.example.designlibrary.resources.words_start_warning
 import com.example.designlibrary.theme.AppColors.TextPrimary
 import com.example.designlibrary.theme.AppColors.TextSecondary
 import org.jetbrains.compose.resources.StringResource
@@ -71,8 +71,8 @@ fun AppTopBar(
 @Composable
 private fun TempAppTopBarPreview() {
     AppTopBar(
-        titleRes = Res.string.my_topics,
-        subTitleRes = Res.string.topics_start_warning,
+        titleRes = Res.string.my_dictionary,
+        subTitleRes = Res.string.words_start_warning,
         showBackButton = false,
         onBackClick = {}
     )

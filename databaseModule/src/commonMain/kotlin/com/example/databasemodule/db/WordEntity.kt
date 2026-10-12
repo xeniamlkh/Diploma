@@ -4,9 +4,10 @@ import androidx.room3.Entity
 import androidx.room3.PrimaryKey
 
 @Entity(tableName = "words")
-data class DictionaryEntity(
+internal data class WordEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
+    val topic: String,
     val word: String,
     val translation: String,
     val example: String

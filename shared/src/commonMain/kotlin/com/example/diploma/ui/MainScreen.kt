@@ -10,7 +10,6 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.unit.dp
 import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import com.example.designlibrary.theme.AppColors.TextSecondary
-import com.example.designlibrary.screens.EmptyScreen
 
 @Composable
 fun MainScreen(
@@ -23,42 +22,6 @@ fun MainScreen(
         )
     }
 }
-
-
-//original screen
-//    Scaffold(
-//        containerColor = Color.White,
-//        bottomBar = {
-//            //AppBottomBar()
-//        }
-//    ) { paddingValues ->
-//        Column(
-//            modifier = Modifier
-//                .fillMaxSize()
-//                .padding(paddingValues)
-//                .padding(horizontal = 24.dp)
-//        ) {
-//
-//            Spacer(modifier = Modifier.height(24.dp))
-//
-//            Header(
-//                onSettingsClick = {}
-//                    //onSettingsClick
-//            )
-//
-//            Box(
-//                modifier = Modifier
-//                    .weight(1f)
-//                    .fillMaxWidth(),
-//                contentAlignment = Alignment.Center
-//            ) {
-//                EmptyTopicsContent(
-//                    //onAddTopicClick = { logger.i { "CLICK" } }
-//                    onAddTopicClick = onAddTopicClick
-//                )
-//            }
-//        }
-//    }
 
 @Composable
 private fun AppBottomBar() {
