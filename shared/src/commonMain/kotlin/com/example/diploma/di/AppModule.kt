@@ -3,7 +3,7 @@ package com.example.diploma.di
 import com.example.diploma.navigation.AddTopicScreen
 import com.example.diploma.navigation.MainScreen
 import com.example.diploma.navigation.Navigator
-import com.example.diploma.ui.AddTopicScreen
+import com.example.diploma.ui.AddWordScreen
 import com.example.diploma.ui.AddWordViewModel
 import com.example.diploma.ui.MainScreen
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -30,7 +30,7 @@ val appModule = module {
     }
 
     navigation<AddTopicScreen> {
-        AddTopicScreen(
+        AddWordScreen(
             onBackClick = {
                 get<Navigator>().goBack()
             }

@@ -1,7 +1,7 @@
 <resources>
    <string name="words_start_warning">Здесь будут храниться ваши слова</string>
    <string name="my_dictionary">Мой словарик</string>
-   <string name="no_topics">Ваш словарик пока пуст</string>
+   <string name="empty_dictionary">Ваш словарик пока пуст</string>
    <string name="add_new_words_explanation">Добавьте первые слова, чтобы начать изучение</string>
    <string name="add_new_word">Добавить</string>
    <string name="new_word">Добавление нового слова</string>
@@ -10,4 +10,5 @@
    <string name="word">Введите слово</string>
    <string name="translation">Введите перевод</string>
    <string name="example">Добавьте пример</string>
+   <string name="example_is_saved">Пример успешно сохранен</string>
 </resources>

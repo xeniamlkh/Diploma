@@ -11,12 +11,17 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.designlibrary.components.AppTopBar
+import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import org.jetbrains.compose.resources.StringResource
 
 /** Единый шаблон экрана для всего приложения (LazyColumn)
@@ -35,6 +40,7 @@ fun AppScreen(
     showBackButton: Boolean = false,
     onBackClick: (() -> Unit)? = null,
     scrollState: LazyListState = rememberLazyListState(),
+    snackBarHostState: SnackbarHostState = SnackbarHostState(),
     content: LazyListScope.() -> Unit
 ) {
     Scaffold(
@@ -47,6 +53,17 @@ fun AppScreen(
                 showBackButton = showBackButton,
                 onBackClick = onBackClick
             )
+        },
+        snackbarHost = {
+            SnackbarHost(hostState = snackBarHostState) {
+                Snackbar(
+                    modifier = Modifier.padding(8.dp),
+                    containerColor = PrimaryBlue,
+                    actionColor = Color.White,
+                    actionContentColor = Color.White,
+                    snackbarData = it
+                )
+            }
         },
         content = { padding ->
             LazyColumn(

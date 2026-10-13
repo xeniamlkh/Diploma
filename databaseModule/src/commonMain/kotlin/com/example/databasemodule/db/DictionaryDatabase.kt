@@ -7,7 +7,7 @@ import androidx.room3.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import kotlinx.coroutines.Dispatchers
 
-@Database(entities = [WordEntity::class], version = 2)
+@Database(entities = [WordEntity::class], version = 3)
 @ConstructedBy(DictionaryDatabaseConstructor::class)
 abstract class DictionaryDatabase : RoomDatabase() {
     internal abstract fun getDao(): DictionaryDao

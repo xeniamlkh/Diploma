@@ -1,28 +1,26 @@
 package com.example.diploma.ui
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import co.touchlab.kermit.Logger
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppOutlinedTextField
-import com.example.designlibrary.components.AppScreenField
 import com.example.designlibrary.components.appScreenField
 import com.example.designlibrary.resources.ic_save
 import com.example.designlibrary.resources.new_word
 import com.example.designlibrary.resources.save_btn
 import com.example.designlibrary.resources.example
 import com.example.designlibrary.screens.AppScreen
-import com.example.designlibrary.theme.AppColors.PrimaryBlue
-import com.example.designlibrary.theme.AppColors.TextPrimary
-import com.example.designlibrary.theme.AppColors.TextSecondary
 import com.example.designlibrary.resources.Res
+import com.example.designlibrary.resources.example_is_saved
 import com.example.designlibrary.resources.translation
 import com.example.designlibrary.resources.word
+import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -34,10 +32,30 @@ fun AddWordScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     with(state) {
+
+        LaunchedEffect(disableSnackBar) {
+            if (disableSnackBar) {
+                snackbarHostState.currentSnackbarData?.dismiss()
+            }
+        }
+
+        LaunchedEffect(wordIsSaved) {
+            if (wordIsSaved) {
+                snackbarHostState.showSnackbar(
+                    message = getString(Res.string.example_is_saved),
+                    withDismissAction = true,
+                    duration = SnackbarDuration.Short
+                )
+            }
+        }
         AppScreen(
             titleRes = Res.string.new_word,
             showBackButton = true,
-            onBackClick = onBackClick,
+            onBackClick = {
+                viewModel.onBackClick()
+                onBackClick()
+            },
+            snackBarHostState = snackbarHostState,
             content = {
                 appScreenField {
                     AppOutlinedTextField(
@@ -67,7 +85,7 @@ fun AddWordScreen(
                     AppFullWidthFilledButton(
                         iconRes = Res.drawable.ic_save,
                         buttonText = stringResource(Res.string.save_btn),
-                        onClick =  viewModel::addWord
+                        onClick = viewModel::addWord
                     )
                 }
             }

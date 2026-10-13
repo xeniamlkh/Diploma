@@ -17,7 +17,7 @@ class AddWordViewModel(
     val state: StateFlow<AddWordUiState> = _state.asStateFlow()
 
     fun onWordChange(value: String) {
-        _state.update { it.copy(word = value) }
+        _state.update { it.copy(word = value, wordIsSaved = false) }
     }
 
     fun onTranslationChange(value: String) {
@@ -38,6 +38,24 @@ class AddWordViewModel(
                     translation = currentState.translation,
                     example = currentState.example
                 )
+            )
+        }
+
+        _state.update {
+            it.copy(
+                word = "",
+                translation = "",
+                example = "",
+                wordIsSaved = true
+            )
+        }
+    }
+
+    fun onBackClick() {
+        _state.update {
+            it.copy(
+                disableSnackBar = true,
+                wordIsSaved = false
             )
         }
     }
