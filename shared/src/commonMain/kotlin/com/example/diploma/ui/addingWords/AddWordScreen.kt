@@ -1,13 +1,11 @@
-package com.example.diploma.ui
+package com.example.diploma.ui.addingWords
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import co.touchlab.kermit.Logger
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppOutlinedTextField
 import com.example.designlibrary.components.appScreenField

@@ -1,4 +1,4 @@
-package com.example.diploma.ui
+package com.example.diploma.ui.addingWords
 
 import androidx.compose.material3.SnackbarHostState
 

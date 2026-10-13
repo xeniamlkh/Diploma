@@ -1,4 +1,4 @@
-package com.example.diploma.ui
+package com.example.diploma.ui.addingWords
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
