@@ -28,9 +28,14 @@ class AddWordViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val sentence = sentenceService.searchSentence(currentWord)
-                _state.update { it.copy(example = sentence) }
+                _state.update {
+                    it.copy(
+                        example = sentence,
+                        isExampleError = false
+                    )
+                }
             } catch (e: Exception) {
-                _state.update { it.copy(example = e.message.toString()) }
+                _state.update { it.copy(isExampleError = true) }
             }
         }
     }

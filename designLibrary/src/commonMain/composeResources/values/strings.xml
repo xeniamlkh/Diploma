@@ -13,4 +13,6 @@
    <string name="example_is_saved">Пример успешно сохранен</string>
    <string name="start_study">Начать изучение</string>
    <string name="tap_to_flip">Нажмите на карточку, чтобы перевернуть</string>
+   <string name="network_error">Ошибка сети. Не удалось загрузить пример</string>
+   <string name="network_error_hint">Попробуйте выключить/включить ВПН или подключиться к другой сети</string>
 </resources>

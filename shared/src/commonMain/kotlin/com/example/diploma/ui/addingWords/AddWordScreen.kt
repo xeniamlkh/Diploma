@@ -1,10 +1,8 @@
 package com.example.diploma.ui.addingWords
 
-import androidx.compose.foundation.layout.*
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppOutlinedTextField
@@ -16,6 +14,8 @@ import com.example.designlibrary.resources.example
 import com.example.designlibrary.screens.AppScreen
 import com.example.designlibrary.resources.Res
 import com.example.designlibrary.resources.example_is_saved
+import com.example.designlibrary.resources.network_error
+import com.example.designlibrary.resources.network_error_hint
 import com.example.designlibrary.resources.translation
 import com.example.designlibrary.resources.word
 import org.jetbrains.compose.resources.getString
@@ -72,9 +72,11 @@ fun AddWordScreen(
                 }
                 appScreenField {
                     AppOutlinedTextField(
-                        value = state.example,
+                        value = if (!isExampleError) state.example else stringResource(Res.string.network_error),
                         onValueChange = viewModel::onExampleChange,
-                        placeholder = stringResource(Res.string.example)
+                        placeholder = stringResource(Res.string.example),
+                        isError = isExampleError,
+                        errorText = stringResource(Res.string.network_error_hint)
                     )
                 }
                 appScreenField {
