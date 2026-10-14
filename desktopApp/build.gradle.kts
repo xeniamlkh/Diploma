@@ -8,11 +8,13 @@ plugins {
 
 dependencies {
     implementation(project(":shared"))
-    //implementation(project(":databaseModule"))
+    implementation(project(":designLibrary"))
 
     implementation(compose.desktop.currentOs)
     implementation(libs.kotlinx.coroutinesSwing)
     implementation(libs.compose.uiToolingPreview)
+
+    implementation(libs.compose.components.resources)
 
     //DI Koin Core
     implementation(libs.koin.core)
@@ -26,6 +28,8 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.example.diploma"
             packageVersion = "1.0.0"
+
+            windows { iconFile.set(project.file("designLibrary/src/commonMain/composeResources/drawable/ic_diploma_ico.ico")) }
         }
     }
 }
