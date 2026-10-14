@@ -1,6 +1,6 @@
 package com.example.networkmodule.di
 
-import com.example.networkmodule.TatoebaApi
+import com.example.networkmodule.rest.TatoebaApi
 import com.example.networkmodule.domain.ITatoebaApi
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf

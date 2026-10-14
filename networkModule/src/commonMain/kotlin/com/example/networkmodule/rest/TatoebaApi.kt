@@ -1,4 +1,4 @@
-package com.example.networkmodule
+package com.example.networkmodule.rest
 
 import com.example.networkmodule.domain.ITatoebaApi
 import io.ktor.client.HttpClient

@@ -50,6 +50,11 @@ kotlin {
         }
 
         jvmMain.dependencies {}
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.coroutines.test)
+        }
     }
 }
 
