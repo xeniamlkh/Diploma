@@ -19,19 +19,21 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun MainScreen(
     viewModel: MainScreenViewModel = koinViewModel(),
-    onAddTopicClick: () -> Unit
+    onAddWordClick: () -> Unit,
+    onLearnWordClick: () -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
     with(state) {
         if (words.isEmpty()) {
             EmptyScreen(
-                onAddTopicClick = onAddTopicClick
+                onAddWordClick = onAddWordClick
             )
         } else {
             WordListScreen(
                 words = state.words,
-                onAddWordClick = onAddTopicClick,
+                onAddWordClick = onAddWordClick,
+                onLearnWordClick = onLearnWordClick,
                 onDeleteWordClick = viewModel::deleteWord
             )
         }

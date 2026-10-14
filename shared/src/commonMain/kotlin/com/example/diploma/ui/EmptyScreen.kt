@@ -21,7 +21,9 @@ import com.example.designlibrary.theme.AppColors.TextSecondary
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun EmptyScreen(onAddTopicClick: () -> Unit) {
+fun EmptyScreen(
+    onAddWordClick: () -> Unit
+) {
     AppScreen(
         titleRes = Res.string.my_dictionary,
         subTitleRes = Res.string.words_start_warning,
@@ -53,7 +55,7 @@ fun EmptyScreen(onAddTopicClick: () -> Unit) {
                 AppFullWidthFilledButton(
                     iconRes = Res.drawable.ic_add,
                     buttonText = stringResource(Res.string.add_new_word),
-                    onClick = onAddTopicClick
+                    onClick = onAddWordClick
                 )
             }
         }

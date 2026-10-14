@@ -60,23 +60,21 @@ fun AddWordScreen(
                         value = word,
                         onValueChange = viewModel::onWordChange,
                         placeholder = stringResource(Res.string.word),
-                        modifier = Modifier.fillMaxWidth()
+                        onFocusEnded = viewModel::onWordFocusEnded
                     )
                 }
                 appScreenField {
                     AppOutlinedTextField(
                         value = translation,
                         onValueChange = viewModel::onTranslationChange,
-                        placeholder = stringResource(Res.string.translation),
-                        modifier = Modifier.fillMaxWidth()
+                        placeholder = stringResource(Res.string.translation)
                     )
                 }
                 appScreenField {
                     AppOutlinedTextField(
                         value = state.example,
                         onValueChange = viewModel::onExampleChange,
-                        placeholder = stringResource(Res.string.example),
-                        modifier = Modifier.fillMaxWidth()
+                        placeholder = stringResource(Res.string.example)
                     )
                 }
                 appScreenField {

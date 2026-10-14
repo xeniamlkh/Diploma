@@ -2,6 +2,7 @@ package com.example.diploma.navigation
 
 import androidx.navigation3.runtime.NavKey
 import androidx.savedstate.serialization.SavedStateConfiguration
+import com.example.databasemodule.domain.WordItem
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.modules.SerializersModule
@@ -15,7 +16,7 @@ sealed interface Route : NavKey
 data object MainScreen: Route
 
 @Serializable
-data object AddTopicScreen: Route
+data object AddWordScreen: Route
 
 @OptIn(ExperimentalSerializationApi::class)
 val serializableConfig = SavedStateConfiguration {
@@ -25,3 +26,6 @@ val serializableConfig = SavedStateConfiguration {
         }
     }
 }
+
+@Serializable
+data object WordCardsScreen: Route

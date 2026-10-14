@@ -37,6 +37,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.androidx.room3.sqlite.wrapper)
         }
+
         commonMain.dependencies {
             implementation(libs.kotlin.stdlib)
 

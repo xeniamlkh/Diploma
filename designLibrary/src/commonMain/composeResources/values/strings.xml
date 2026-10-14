@@ -3,7 +3,7 @@
    <string name="my_dictionary">Мой словарик</string>
    <string name="empty_dictionary">Ваш словарик пока пуст</string>
    <string name="add_new_words_explanation">Добавьте первые слова, чтобы начать изучение</string>
-   <string name="add_new_word">Добавить</string>
+   <string name="add_new_word">Добавить слово</string>
    <string name="new_word">Добавление нового слова</string>
    <string name="back_btn_description">Назад</string>
    <string name="save_btn">Сохранить</string>
@@ -11,4 +11,6 @@
    <string name="translation">Введите перевод</string>
    <string name="example">Добавьте пример</string>
    <string name="example_is_saved">Пример успешно сохранен</string>
+   <string name="start_study">Начать изучение</string>
+   <string name="tap_to_flip">Нажмите на карточку, чтобы перевернуть</string>
 </resources>

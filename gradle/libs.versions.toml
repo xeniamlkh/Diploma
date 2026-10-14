@@ -27,6 +27,8 @@ multiplatform-nav3-ui = "1.1.1"
 room3 = "3.1.0-alpha01"
 sqlite = "2.7.1"
 ksp = "2.3.12"
+ktor = "3.6.0"
+ch-qos-logback = "1.6.5"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -76,6 +78,24 @@ androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper"
 
 #Logs
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+
+#Ktor - The main client functionality
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+
+#Ktor JVM & Android client
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+
+#Ktor - Logging producer
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+
+#Ktor - logging implementation on JVM
+ch-qos-logback = { module = "ch.qos.logback:logback-classic", version.ref = "ch-qos-logback" }
+
+#Ktor - transformation to expected type
+ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+#Ktor - serialization
+ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
