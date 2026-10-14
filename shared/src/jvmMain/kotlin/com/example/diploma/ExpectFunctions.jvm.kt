@@ -13,6 +13,7 @@ import com.example.designlibrary.resources.add_new_word
 import com.example.designlibrary.resources.ic_add
 import com.example.designlibrary.resources.ic_selector_tool
 import com.example.designlibrary.resources.start_study
+import com.example.diploma.ui.addingWords.AddWordViewModel
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -38,3 +39,11 @@ actual fun GetBottomBar(
         )
     }
 }
+
+actual fun showBackButton(): Boolean = true
+
+@Composable
+actual fun AppBackHandler(
+    viewModel: AddWordViewModel,
+    onBackClick: () -> Unit
+) {}

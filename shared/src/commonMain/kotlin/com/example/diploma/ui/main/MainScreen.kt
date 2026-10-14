@@ -7,6 +7,7 @@ import com.example.diploma.ui.EmptyScreen
 import com.example.diploma.ui.WordListScreen
 import org.koin.compose.viewmodel.koinViewModel
 
+/** Главная страница приложения */
 @Composable
 fun MainScreen(
     viewModel: MainScreenViewModel = koinViewModel(),

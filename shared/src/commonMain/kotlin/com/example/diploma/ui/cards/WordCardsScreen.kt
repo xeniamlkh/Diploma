@@ -11,9 +11,11 @@ import com.example.designlibrary.resources.my_dictionary
 import com.example.designlibrary.resources.tap_to_flip
 import com.example.designlibrary.screens.AppScreen
 import com.example.designlibrary.theme.AppColors.TextSecondary
+import com.example.diploma.showBackButton
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
+/** Страница изучения слов */
 @Composable
 fun WordCardsScreen(
     viewModel: WordCardsScreenViewModel = koinViewModel(),
@@ -24,7 +26,7 @@ fun WordCardsScreen(
     with(state) {
         AppScreen(
             titleRes = Res.string.my_dictionary,
-            showBackButton = true,
+            showBackButton = showBackButton(),
             onBackClick = onBackClick,
             content = {
                 if (words.isNotEmpty()) {

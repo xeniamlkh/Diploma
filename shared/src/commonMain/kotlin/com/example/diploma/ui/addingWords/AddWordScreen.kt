@@ -18,10 +18,13 @@ import com.example.designlibrary.resources.network_error
 import com.example.designlibrary.resources.network_error_hint
 import com.example.designlibrary.resources.translation
 import com.example.designlibrary.resources.word
+import com.example.diploma.AppBackHandler
+import com.example.diploma.showBackButton
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
+/** Страница добавления слов */
 @Composable
 fun AddWordScreen(
     viewModel: AddWordViewModel = koinViewModel(),
@@ -46,9 +49,15 @@ fun AddWordScreen(
                 )
             }
         }
+
+        AppBackHandler(
+            viewModel = viewModel,
+            onBackClick = onBackClick
+        )
+
         AppScreen(
             titleRes = Res.string.new_word,
-            showBackButton = true,
+            showBackButton = showBackButton(),
             onBackClick = {
                 viewModel.onBackClick()
                 onBackClick()

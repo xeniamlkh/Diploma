@@ -9,6 +9,7 @@ import com.example.designlibrary.resources.my_dictionary
 import com.example.designlibrary.screens.AppScreen
 import com.example.diploma.GetBottomBar
 
+/** Экран со списком слов */
 @Composable
 fun WordListScreen(
     words: List<WordItem>,
@@ -18,7 +19,6 @@ fun WordListScreen(
 ) {
     AppScreen(
         titleRes = Res.string.my_dictionary,
-        showBackButton = false,
         content = {
             items(words) { word ->
                 AppWordItem(

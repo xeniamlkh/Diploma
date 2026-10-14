@@ -13,6 +13,8 @@ import com.example.designlibrary.resources.ic_add
 import com.example.designlibrary.resources.ic_selector_tool
 import com.example.designlibrary.resources.start_study
 import org.jetbrains.compose.resources.stringResource
+import androidx.activity.compose.BackHandler
+import com.example.diploma.ui.addingWords.AddWordViewModel
 
 @Composable
 actual fun GetBottomBar(
@@ -37,5 +39,18 @@ actual fun GetBottomBar(
             buttonText = stringResource(Res.string.start_study),
             onClick = onLearnWordClick
         )
+    }
+}
+
+actual fun showBackButton(): Boolean = false
+
+@Composable
+actual fun AppBackHandler(
+    viewModel: AddWordViewModel,
+    onBackClick: () -> Unit
+) {
+    BackHandler {
+        viewModel.onBackClick()
+        onBackClick()
     }
 }

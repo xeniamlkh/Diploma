@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.mandatorySystemGesturesPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -30,7 +31,7 @@ import org.jetbrains.compose.resources.StringResource
  * @param subTitleRes Подзаголовок экрана, описание
  * @param showBackButton Показывать ли кнопку назад (Для jvm)
  * @param onBackClick Функция, которую нужно выполнять при нажатии на кнопку назад
- * @param scrollState //TODO
+ * @param scrollState Скролл
  * @param content Содержимое экрана
  * */
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -46,8 +47,10 @@ fun AppScreen(
     content: LazyListScope.() -> Unit
 ) {
     Scaffold(
+        modifier = Modifier
+            .imePadding()
+            .mandatorySystemGesturesPadding(),
         containerColor = Color.White,
-        modifier = Modifier.imePadding(),
         topBar = {
             AppTopBar(
                 titleRes = titleRes,

@@ -20,6 +20,7 @@ import com.example.designlibrary.theme.AppColors.TextPrimary
 import com.example.designlibrary.theme.AppColors.TextSecondary
 import org.jetbrains.compose.resources.stringResource
 
+/** Пустой экран */
 @Composable
 fun EmptyScreen(
     onAddWordClick: () -> Unit
@@ -27,8 +28,6 @@ fun EmptyScreen(
     AppScreen(
         titleRes = Res.string.my_dictionary,
         subTitleRes = Res.string.words_start_warning,
-        showBackButton = false,
-        onBackClick = {},
         content = {
             appScreenField {
                 FolderIllustration()
