@@ -55,6 +55,12 @@ kotlin {
             implementation(libs.ch.qos.logback)
         }
 
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.coroutines.test)
+            implementation(libs.ktor.test)
+        }
+
         getByName("androidDeviceTest") {
             dependencies {
                 implementation(libs.androidx.core)

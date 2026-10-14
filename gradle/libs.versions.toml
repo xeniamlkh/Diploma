@@ -35,7 +35,7 @@ coroutines-test = "1.11.0"
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
-coroutines-test = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-test"}
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-test" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-testExt-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-testExt" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso" }
@@ -87,9 +87,6 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 #Ktor JVM & Android client
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 
-#Ktor - Logging producer
-ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
-
 #Ktor - logging implementation on JVM
 ch-qos-logback = { module = "ch.qos.logback:logback-classic", version.ref = "ch-qos-logback" }
 
@@ -98,6 +95,9 @@ ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation",
 
 #Ktor - serialization
 ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+#Ktor - test
+ktor-test = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
