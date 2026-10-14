@@ -1,8 +1,7 @@
 package com.example.designlibrary.components
 
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -13,6 +12,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -21,7 +21,7 @@ import com.example.designlibrary.theme.AppColors.PrimaryBlue
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
-/** Кнопка */
+/** Кнопка JVM */
 @Composable
 fun AppFilledButton(
     iconRes: DrawableResource,
@@ -31,8 +31,9 @@ fun AppFilledButton(
     Button(
         onClick = onClick,
         modifier = Modifier
+            .clip(RoundedCornerShape(16.dp))
             .padding(16.dp)
-            .height(60.dp),
+            .heightIn(60.dp),
         shape = RoundedCornerShape(30.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = PrimaryBlue,
@@ -51,7 +52,9 @@ fun AppFilledButton(
         Text(
             text = buttonText,
             fontSize = 18.sp,
-            fontWeight = FontWeight.Medium
+            fontWeight = FontWeight.Medium,
+            maxLines = 2,
+            softWrap = true
         )
     }
 }
