@@ -28,7 +28,7 @@ compose.desktop {
             packageName = "com.example.diploma"
             packageVersion = "1.0.0"
 
-            windows { iconFile.set(project.file("designLibrary/src/commonMain/composeResources/drawable/ic_diploma_ico.ico")) }
+            windows { iconFile.set(project.file("ic_diploma_ico.ico")) }
         }
     }
 }
