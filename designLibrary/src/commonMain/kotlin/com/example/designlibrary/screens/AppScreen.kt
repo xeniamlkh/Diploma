@@ -21,6 +21,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.designlibrary.components.AppTopBar
 import com.example.designlibrary.theme.AppColors.PrimaryBlue
@@ -38,6 +39,7 @@ import org.jetbrains.compose.resources.StringResource
 @Composable
 fun AppScreen(
     titleRes: StringResource,
+    testTag: String = "",
     subTitleRes: StringResource? = null,
     showBackButton: Boolean = false,
     onBackClick: (() -> Unit)? = null,
@@ -73,6 +75,7 @@ fun AppScreen(
         content = { padding ->
             LazyColumn(
                 modifier = Modifier
+                    .testTag(testTag)
                     .fillMaxWidth()
                     .padding(padding)
                     .padding(horizontal = 8.dp),

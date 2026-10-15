@@ -12,8 +12,6 @@ kotlin {
 }
 dependencies {
     implementation(project(":shared"))
-    //implementation(project(":designLibrary"))
-    //implementation(project(":databaseModule"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.uiToolingPreview)
@@ -21,6 +19,9 @@ dependencies {
 
     //DI
     implementation(libs.koin.android)
+
+    //Tests
+    debugImplementation(libs.androidx.test.manifest)
 }
 
 android {

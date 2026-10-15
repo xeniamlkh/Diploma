@@ -88,6 +88,17 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             implementation(libs.coroutines.test)
+            implementation(libs.compose.testing)
+        }
+
+        jvmTest.dependencies {
+            implementation(compose.desktop.currentOs)
+            implementation(libs.kotlinx.coroutinesSwing)
+        }
+
+        androidInstrumentedTest.dependencies {
+            implementation(libs.androidx.test.junit4)
+            implementation(libs.androidx.runner)
         }
     }
 }

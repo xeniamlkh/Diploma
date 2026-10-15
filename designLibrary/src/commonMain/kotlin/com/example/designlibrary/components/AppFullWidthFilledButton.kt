@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,6 +24,7 @@ import org.jetbrains.compose.resources.painterResource
 /** Кнопка в ширину экрана */
 @Composable
 fun AppFullWidthFilledButton(
+    testTag: String = "",
     iconRes: DrawableResource,
     buttonText: String,
     onClick: () -> Unit
@@ -30,6 +32,7 @@ fun AppFullWidthFilledButton(
     Button(
         onClick = onClick,
         modifier = Modifier
+            .testTag(testTag)
             .fillMaxWidth()
             .height(60.dp),
         shape = RoundedCornerShape(30.dp),

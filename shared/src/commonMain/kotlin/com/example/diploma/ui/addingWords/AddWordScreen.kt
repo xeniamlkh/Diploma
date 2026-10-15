@@ -57,6 +57,7 @@ fun AddWordScreen(
 
         AppScreen(
             titleRes = Res.string.new_word,
+            testTag = AddWordScreenTestTags.SCREEN_NAME,
             showBackButton = showBackButton(),
             onBackClick = {
                 viewModel.onBackClick()
@@ -67,6 +68,7 @@ fun AddWordScreen(
                 appScreenField {
                     AppOutlinedTextField(
                         value = word,
+                        testTag = AddWordScreenTestTags.WORD_TEXT_FIELD,
                         onValueChange = viewModel::onWordChange,
                         placeholder = stringResource(Res.string.word),
                         onFocusEnded = viewModel::onWordFocusEnded
@@ -75,6 +77,7 @@ fun AddWordScreen(
                 appScreenField {
                     AppOutlinedTextField(
                         value = translation,
+                        testTag = AddWordScreenTestTags.TRANSLATION_TEXT_FIELD,
                         onValueChange = viewModel::onTranslationChange,
                         placeholder = stringResource(Res.string.translation)
                     )
@@ -82,6 +85,8 @@ fun AddWordScreen(
                 appScreenField {
                     AppOutlinedTextField(
                         value = if (!isExampleError) state.example else stringResource(Res.string.network_error),
+                        testTag = AddWordScreenTestTags.EXAMPLE_TEXT_FIELD,
+                        errorTestTag = AddWordScreenTestTags.TRANSLATION_ERROR,
                         onValueChange = viewModel::onExampleChange,
                         placeholder = stringResource(Res.string.example),
                         isError = isExampleError,
@@ -90,6 +95,7 @@ fun AddWordScreen(
                 }
                 appScreenField {
                     AppFullWidthFilledButton(
+                        testTag = AddWordScreenTestTags.SAVE_BUTTON,
                         iconRes = Res.drawable.ic_save,
                         buttonText = stringResource(Res.string.save_btn),
                         onClick = viewModel::addWord
@@ -98,4 +104,13 @@ fun AddWordScreen(
             }
         )
     }
+}
+
+object AddWordScreenTestTags {
+    const val SCREEN_NAME = "AddWordScreen"
+    const val WORD_TEXT_FIELD = "Word"
+    const val TRANSLATION_TEXT_FIELD = "Translation"
+    const val TRANSLATION_ERROR = "TranslationError"
+    const val EXAMPLE_TEXT_FIELD = "Example"
+    const val SAVE_BUTTON = "SaveButton"
 }

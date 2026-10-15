@@ -30,6 +30,8 @@ ksp = "2.3.12"
 ktor = "3.6.0"
 ch-qos-logback = "1.6.5"
 coroutines-test = "1.11.0"
+compose-testing = "1.12.1"
+androidx-test-junit4 = "1.12.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -49,6 +51,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
+androidx-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4-android", version.ref = "androidx-test-junit4" }
+androidx-test-manifest = {module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-test-junit4"}
 
 #Compose
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
@@ -56,6 +60,9 @@ compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.re
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
+
+#Compose tests
+compose-testing = { module = "org.jetbrains.compose.ui:ui-test", version.ref = "compose-testing" }
 
 #Compose Resources
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
