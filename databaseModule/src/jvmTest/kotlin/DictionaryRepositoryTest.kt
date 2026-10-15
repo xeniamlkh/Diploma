@@ -16,7 +16,6 @@ import kotlin.test.assertContains
 class DictionaryRepositoryTest {
     private lateinit var db: DictionaryDatabase
     private lateinit var dao: DictionaryDao
-
     private lateinit var repo: DictionaryRepositoryImpl
 
     @BeforeTest
