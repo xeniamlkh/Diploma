@@ -8,7 +8,8 @@
 *   При желании загруженный пример можно заменить на свой.
 
 ## Используемые технологии
-*	KMP: Android, JVM
+*	Kotlin
+*   KMP: Android, JVM
 *   Многомодульное приложение
 *   Clean Architecture
 *   Jetpack Compose
