@@ -2,9 +2,8 @@ package com.example.addwordscreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.databasemodule.domain.IDictionaryRepository
+import com.example.addwordscreen.domain.AddWordService
 import com.example.databasemodule.domain.WordItem
-import com.example.networkmodule.domain.ITatoebaApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,8 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class AddWordViewModel(
-    private val appRepository: IDictionaryRepository,
-    private val sentenceService: ITatoebaApi
+    private val addWordService: AddWordService
 ) : ViewModel() {
     private val _state = MutableStateFlow(AddWordUiState())
     val state: StateFlow<AddWordUiState> = _state.asStateFlow()
@@ -27,7 +25,7 @@ class AddWordViewModel(
         val currentWord = _state.value.word
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val sentence = sentenceService.searchSentence(currentWord)
+                val sentence = addWordService.searchSentence(currentWord)
                 _state.update {
                     it.copy(
                         example = sentence,
@@ -52,7 +50,7 @@ class AddWordViewModel(
         val currentState = _state.value
 
         viewModelScope.launch(Dispatchers.IO) {
-            appRepository.addWord(
+            addWordService.addWord(
                 WordItem(
                     word = currentState.word,
                     translation = currentState.translation,
