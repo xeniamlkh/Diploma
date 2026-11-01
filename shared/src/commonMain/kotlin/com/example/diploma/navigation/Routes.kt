@@ -9,6 +9,3 @@ sealed interface Route : NavKey
 
 @Serializable
 data object AddWordScreen: Route
-
-@Serializable
-data object WordCardsScreen: Route

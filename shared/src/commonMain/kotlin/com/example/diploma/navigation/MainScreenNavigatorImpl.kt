@@ -10,6 +10,6 @@ class MainScreenNavigatorImpl(
     }
 
     override fun openWordCardsScreen() {
-        navigator.goTo(destination = WordCardsScreen)
+        //navigator.goTo(destination = WordCardsScreen) //TODO
     }
 }

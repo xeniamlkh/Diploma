@@ -3,6 +3,7 @@ package com.example.diploma.di
 import com.example.databasemodule.di.dbModule
 import com.example.mainscreen.di.mainScreenModule
 import com.example.networkmodule.di.networkModule
+import com.example.wordcardsscreen.di.wordCardsScreenModule
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
@@ -18,6 +19,7 @@ fun initKoin(config: KoinAppDeclaration? = null): KoinApplication {
         modules(
             appModule,
             mainScreenModule,
+            wordCardsScreenModule,
             dbModule,
             networkModule
         )

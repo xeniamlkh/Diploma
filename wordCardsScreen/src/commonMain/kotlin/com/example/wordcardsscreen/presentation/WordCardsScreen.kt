@@ -1,4 +1,4 @@
-package com.example.diploma.ui.cards
+package com.example.wordcardsscreen.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,7 +11,7 @@ import com.example.designlibrary.resources.my_dictionary
 import com.example.designlibrary.resources.tap_to_flip
 import com.example.designlibrary.screens.AppScreen
 import com.example.designlibrary.theme.AppColors.TextSecondary
-import com.example.diploma.showBackButton
+import com.example.wordcardsscreen.expected.showBackButton
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 

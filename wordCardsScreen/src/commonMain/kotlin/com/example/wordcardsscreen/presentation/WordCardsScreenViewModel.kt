@@ -1,4 +1,4 @@
-package com.example.diploma.ui.cards
+package com.example.wordcardsscreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

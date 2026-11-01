@@ -1,4 +1,4 @@
-package com.example.diploma.ui.cards
+package com.example.wordcardsscreen.presentation
 
 import com.example.databasemodule.domain.WordItem
 

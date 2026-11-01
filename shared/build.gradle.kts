@@ -82,6 +82,7 @@ kotlin {
             implementation(projects.databaseModule)
             implementation(projects.networkModule)
             implementation(projects.mainScreen)
+            implementation(projects.wordCardsScreen)
         }
 
         jvmMain.dependencies {}
