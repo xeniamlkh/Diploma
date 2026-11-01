@@ -9,6 +9,9 @@ plugins {
     //Android
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.androidLint)
+
+    //Detekt
+    alias(libs.plugins.detekt.plugin)
 }
 
 kotlin {
@@ -94,4 +97,10 @@ compose.resources {
     //the Res class is generated only if the project has an explicit implementation or
     // api dependency on the resource library
     generateResClass = always
+}
+
+detekt {
+    toolVersion = "2.0.0-alpha.6"
+    config.setFrom(file("config/detekt/detekt.yml"))
+    buildUponDefaultConfig = true
 }

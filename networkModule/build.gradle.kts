@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.androidLint)
     alias(libs.plugins.kotlinxSerialization)
+
+    //Detekt
+    alias(libs.plugins.detekt.plugin)
 }
 
 kotlin {
@@ -69,4 +72,10 @@ kotlin {
             }
         }
     }
+}
+
+detekt {
+    toolVersion = "2.0.0-alpha.6"
+    config.setFrom(file("config/detekt/detekt.yml"))
+    buildUponDefaultConfig = true
 }

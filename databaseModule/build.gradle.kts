@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room3)
     alias(libs.plugins.koin.compiler)
+
+    //Detekt
+    alias(libs.plugins.detekt.plugin)
 }
 
 room3 {
@@ -61,4 +64,10 @@ kotlin {
 dependencies {
     add("kspAndroid", libs.androidx.room3.compiler)
     add("kspJvm", libs.androidx.room3.compiler)
+}
+
+detekt {
+    toolVersion = "2.0.0-alpha.6"
+    config.setFrom(file("config/detekt/detekt.yml"))
+    buildUponDefaultConfig = true
 }

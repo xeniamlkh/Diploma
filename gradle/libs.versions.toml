@@ -32,6 +32,7 @@ ch-qos-logback = "1.6.5"
 coroutines-test = "1.11.0"
 compose-testing = "1.12.1"
 androidx-test-junit4 = "1.12.1"
+detekt = "2.0.0-alpha.6"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -119,3 +120,4 @@ kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidx-room3 = { id = "androidx.room3", version.ref = "room3" }
 koin-compiler = { id = "io.insert-koin.compiler.plugin", version.ref = "koin-plugin" }
+detekt-plugin = {id = "dev.detekt", version.ref = "detekt"}
