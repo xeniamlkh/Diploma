@@ -81,9 +81,9 @@ kotlin {
 //            implementation(projects.designLibrary)
             implementation(projects.databaseModule)
             implementation(projects.networkModule)
-            implementation(projects.mainScreen)
-            implementation(projects.wordCardsScreen)
-            implementation(projects.addWordScreen)
+            implementation(projects.feature.mainScreen)
+            implementation(projects.feature.wordCardsScreen)
+            implementation(projects.feature.addWordScreen)
         }
 
         jvmMain.dependencies {}

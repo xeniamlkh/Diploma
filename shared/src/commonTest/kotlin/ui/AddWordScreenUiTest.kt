@@ -10,8 +10,8 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.v2.runComposeUiTest
+import com.example.addwordscreen.presentation.AddWordScreenTestTags
 import com.example.databasemodule.domain.WordItem
-import com.example.diploma.ui.addingWords.AddWordScreenTestTags
 import fakes.FakeDictionaryRepository
 import fakes.FakeTatoebaApi
 import java.io.IOException

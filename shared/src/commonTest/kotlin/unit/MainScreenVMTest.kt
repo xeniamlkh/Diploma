@@ -1,5 +1,5 @@
 import com.example.databasemodule.domain.WordItem
-import com.example.diploma.ui.main.MainScreenViewModel
+import com.example.mainscreen.presentation.MainScreenViewModel
 import fakes.FakeDictionaryRepository
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.Dispatchers

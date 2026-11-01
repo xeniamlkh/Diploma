@@ -1,6 +1,6 @@
 
 import com.example.databasemodule.domain.WordItem
-import com.example.diploma.ui.cards.WordCardsScreenViewModel
+import com.example.wordcardsscreen.presentation.WordCardsScreenViewModel
 import fakes.FakeDictionaryRepository
 import junit.framework.TestCase.assertFalse
 import junit.framework.TestCase.assertTrue

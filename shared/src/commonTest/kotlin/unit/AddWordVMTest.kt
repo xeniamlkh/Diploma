@@ -1,4 +1,4 @@
-import com.example.diploma.ui.addingWords.AddWordViewModel
+import com.example.addwordscreen.presentation.AddWordViewModel
 import fakes.FakeDictionaryRepository
 import fakes.FakeTatoebaApi
 import junit.framework.TestCase.assertFalse
