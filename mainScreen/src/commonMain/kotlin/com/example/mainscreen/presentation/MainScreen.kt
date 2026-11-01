@@ -1,10 +1,8 @@
-package com.example.diploma.ui.main
+package com.example.mainscreen.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.diploma.ui.EmptyScreen
-import com.example.diploma.ui.WordListScreen
 import org.koin.compose.viewmodel.koinViewModel
 
 /** Главная страница приложения */

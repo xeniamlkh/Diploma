@@ -1,4 +1,4 @@
-package com.example.diploma.ui
+package com.example.mainscreen.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight

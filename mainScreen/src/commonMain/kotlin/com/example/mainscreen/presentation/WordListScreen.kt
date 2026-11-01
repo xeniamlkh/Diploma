@@ -1,4 +1,4 @@
-package com.example.diploma.ui
+package com.example.mainscreen.presentation
 
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import com.example.designlibrary.components.AppWordItem
 import com.example.designlibrary.resources.Res
 import com.example.designlibrary.resources.my_dictionary
 import com.example.designlibrary.screens.AppScreen
-import com.example.diploma.GetBottomBar
+import com.example.mainscreen.expected.GetBottomBar
 
 /** Экран со списком слов */
 @Composable

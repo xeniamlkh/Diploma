@@ -1,4 +1,4 @@
-package com.example.diploma.ui.main
+package com.example.mainscreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

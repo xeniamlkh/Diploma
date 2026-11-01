@@ -81,6 +81,7 @@ kotlin {
             implementation(projects.designLibrary)
             implementation(projects.databaseModule)
             implementation(projects.networkModule)
+            implementation(projects.mainScreen)
         }
 
         jvmMain.dependencies {}
