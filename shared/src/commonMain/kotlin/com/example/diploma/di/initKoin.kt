@@ -1,5 +1,6 @@
 package com.example.diploma.di
 
+import com.example.addwordscreen.di.addWordScreenModule
 import com.example.databasemodule.di.dbModule
 import com.example.mainscreen.di.mainScreenModule
 import com.example.networkmodule.di.networkModule
@@ -20,6 +21,7 @@ fun initKoin(config: KoinAppDeclaration? = null): KoinApplication {
             appModule,
             mainScreenModule,
             wordCardsScreenModule,
+            addWordScreenModule,
             dbModule,
             networkModule
         )

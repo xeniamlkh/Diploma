@@ -1,4 +1,4 @@
-package com.example.diploma.ui.addingWords
+package com.example.addwordscreen.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,8 +1,10 @@
-package com.example.diploma
+package com.example.addwordscreen.expected
 
-import androidx.compose.runtime.Composable
 import androidx.activity.compose.BackHandler
-import com.example.diploma.ui.addingWords.AddWordViewModel
+import androidx.compose.runtime.Composable
+import com.example.addwordscreen.presentation.AddWordViewModel
+
+actual fun showBackButton(): Boolean = false
 
 @Composable
 actual fun AppBackHandler(

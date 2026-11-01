@@ -1,9 +1,11 @@
-package com.example.diploma.ui.addingWords
+package com.example.addwordscreen.presentation
 
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.addwordscreen.expected.AppBackHandler
+import com.example.addwordscreen.expected.showBackButton
 import com.example.designlibrary.components.AppFullWidthFilledButton
 import com.example.designlibrary.components.AppOutlinedTextField
 import com.example.designlibrary.components.appScreenField
@@ -18,8 +20,6 @@ import com.example.designlibrary.resources.network_error
 import com.example.designlibrary.resources.network_error_hint
 import com.example.designlibrary.resources.translation
 import com.example.designlibrary.resources.word
-import com.example.diploma.AppBackHandler
-import com.example.diploma.showBackButton
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel

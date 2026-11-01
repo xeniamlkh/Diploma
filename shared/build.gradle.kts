@@ -78,11 +78,12 @@ kotlin {
             //Logs
             implementation(libs.kermit)
 
-            implementation(projects.designLibrary)
+//            implementation(projects.designLibrary)
             implementation(projects.databaseModule)
             implementation(projects.networkModule)
             implementation(projects.mainScreen)
             implementation(projects.wordCardsScreen)
+            implementation(projects.addWordScreen)
         }
 
         jvmMain.dependencies {}
